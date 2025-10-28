@@ -1,0 +1,19 @@
+Package: bushfireApp
+Title: Interactive Exploration of Australian Bushfire Risk
+Version: 0.0.0.9000
+Authors@R: 
+    person("Yao", "Lu", , "yluu0123@student.monash.edu", role = c("aut", "cre"))
+Description: An R package with a Shiny app and documentation to explore
+    bushfire risk in Australia.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: 
+    bslib,
+    dplyr,
+    DT,
+    ggplot2,
+    readr,
+    shiny
