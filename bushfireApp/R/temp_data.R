@@ -1,0 +1,21 @@
+#' Global temperature anomaly data (OWID)
+#'
+#' Annual mean near-surface temperature anomaly (°C) relative to the
+#' 1861–1890 baseline. A subset (e.g., Australia and World) is included
+#' for use in the package and the Shiny app.
+#'
+#' @format A data frame with columns:
+#' \describe{
+#'   \item{country}{Character. Entity name (e.g., "Australia", "World").}
+#'   \item{year}{Integer. Observation year.}
+#'   \item{temp_anomaly}{Numeric. Temperature anomaly in °C relative to 1861–1890.}
+#' }
+#'
+#' @details The dataset is prepared from the OWID “temperature-anomaly” CSV
+#' in \code{data-raw/} using \code{data-raw/build_data.R}. The cleaned object
+#' is saved to \code{data/temp_data.rda} and exposed as \code{temp_data}.
+#'
+#' @source Our World in Data, “Annual temperature anomalies relative to the
+#' pre-industrial period” (Met Office Hadley Centre – HadCRUT5).
+#' https://ourworldindata.org/grapher/temperature-anomaly
+"temp_data"
