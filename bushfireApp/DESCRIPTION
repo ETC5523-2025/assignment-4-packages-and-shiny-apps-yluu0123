@@ -17,3 +17,6 @@ Imports:
     ggplot2,
     readr,
     shiny
+Depends: 
+    R (>= 3.5)
+LazyData: true
