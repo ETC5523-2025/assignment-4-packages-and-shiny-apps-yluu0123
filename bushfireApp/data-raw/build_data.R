@@ -1,26 +1,37 @@
-# data-raw/build_data.R
-# Prepare the OWID temperature-anomaly dataset for the package.
+## data-raw/build_data.R
+##
+## Build the cleaned dataset `temp_data` for the bushfireApp package.
+
 
 library(readr)
 library(dplyr)
-library(janitor)
+library(stringr)
 
-# 1. read csv from package's data-raw/
-raw <- read_csv("data-raw/temperature-anomaly.csv", show_col_types = FALSE)
+# 1. Read the raw temperature anomaly CSV
+raw <- read_csv(
+  "data-raw/temperature-anomaly.csv",
+  show_col_types = FALSE
+)
 
-# 2. clean/select/rename to a minimal, tidy schema
-data <- raw |>
-  clean_names() |>
-  rename(country = entity, year = year) |>
-  mutate(temp_anomaly = `global_average_temperature_anomaly_relative_to_1861_1890`) |>
-  select(country, year, temp_anomaly)
 
-# keep Australia & World if available
-if (any(data$country %in% c("Australia", "World"))) {
-  data <- dplyr::filter(data, country %in% c("Australia", "World"))
-}
+clean_data <- raw %>%
+  transmute(
+    country       = .[[1]],
+    code          = .[[2]],
+    year          = .[[3]],
+    temp_anomaly  = .[[4]]
+  )
 
-# 3. save as package data object
-temp_data <- data
+# 2. Clean types and order
+temp_data <- clean_data %>%
+  mutate(
+    country = str_trim(as.character(country)),
+    year = as.integer(year),
+    temp_anomaly = as.numeric(temp_anomaly)
+  ) %>%
+  arrange(country, year)
+
+
+# 3. Save as package data
+
 usethis::use_data(temp_data, overwrite = TRUE)
-
