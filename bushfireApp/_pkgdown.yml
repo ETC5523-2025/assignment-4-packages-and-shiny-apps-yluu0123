@@ -1,20 +1,19 @@
 template:
   bootstrap: 5
 
-destination: docs
+destination: ../docs/bushfireApp
 
-url: https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123
+url: https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/bushfireApp/
 
 home:
   title: "bushfireApp"
   description: >
     An interactive package to explore global temperature anomaly data
-    relative to the 1861–1890 baseline, via a Shiny app + documented dataset.
+    relative to the 1861–1890 baseline, via a Shiny app and documentation.
 
 navbar:
   structure:
-    left:
-      - reference
-      - articles
-    right:
-      - home
+    left: [reference, articles]
+    right: [home]
+
+
