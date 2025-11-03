@@ -1,26 +1,42 @@
 # bushfireApp
 
-**bushfireApp** is an R package that bundles:  
-- a cleaned dataset of annual temperature anomalies (relative to the 1861–1890 baseline),  
-- an interactive **Shiny App** to explore that dataset, and  
-- reproducible documentation for reproducible research.
+**bushfireApp** is an R package designed to explore **global temperature anomalies** (°C) relative to the 1861–1890 baseline.
 
-The goal is to let users see how global (and regional) temperatures have shifted over time relative to a “pre-industrial” baseline.
+It includes:
 
----
+- 🧭 A **cleaned dataset** `temp_data`  
+- 📊 An **interactive Shiny app** for visualizing warming trends  
+- 📚 **Documentation and vignette** to support interpretation  
 
-## pkgdown website
-
-Explore the full package documentation and Shiny demo here:  
-[https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/](https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/)
+> **Data source:** [Our World in Data](https://ourworldindata.org/grapher/temperature-anomaly) – Annual temperature anomalies relative to the pre-industrial period (Met Office Hadley Centre, *HadCRUT5*).
 
 ---
 
-## Installation
+## 🧩 Installation
+
+You can install the development version of **bushfireApp** from GitHub with:
+
 
 ```r
-# install the 'remotes' package if needed
-install.packages("remotes")
-
-# then install this package from GitHub
+# install.packages("remotes")   # if not yet installed
 remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-yluu0123")
+```
+
+## 🚀 Quick Start
+After installation, load the package and launch the interactive app:
+
+```r
+library(bushfireApp)
+
+# Launch the Shiny app
+
+run_my_app()
+```
+
+This will open a browser window where you can:
+
+- Select a region (e.g., World, Australia, Northern Hemisphere)
+
+- Adjust the year range interactively
+
+- View temperature anomaly trends and inspect underlying data

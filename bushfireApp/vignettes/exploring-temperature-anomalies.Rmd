@@ -1,11 +1,23 @@
 ---
-title: "exploring-temperature-anomalies"
+title: "Exploring-temperature-anomalies"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{exploring-temperature-anomalies}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+# Overview
+
+This vignette shows how to explore `temp_data` (annual temperature anomaly vs the 1861–1890 baseline) and reproduce the main figure used in the app.
+
+## Data
+
+`temp_data` has three columns:
+
+- `country` — region name (e.g., "World", "Northern Hemisphere")
+- `year` — observation year
+- `temp_anomaly` — °C relative to the 1861–1890 baseline
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -19,7 +31,15 @@ library(bushfireApp)
 library(ggplot2)
 ```
 
+
 ```{r}
+head(temp_data)
+```
+
+```{r}
+#| fig.cap: "Temperature anomaly over time"
+#| fig.alt: "A time-series line chart of temperature anomaly relative to 1861–1890 baseline."
+
 ggplot(temp_data, aes(x = year, y = temp_anomaly, colour = country)) +
 geom_line(linewidth = 1) +
 geom_hline(yintercept = 0, linetype = 2, colour = "grey40") +
@@ -31,3 +51,13 @@ title = "Temperature anomaly over time"
 theme_minimal(base_size = 12)
 ```
 
+## How to interpret
+- Values above 0 are warmer than the 1861–1890 baseline; below 0 are cooler.
+
+- A persistent upward trend indicates warming.
+
+- Recent decades show sustained positive anomalies, consistent with modern warming.
+
+## Reproducibility
+
+Source: Our World in Data “temperature-anomaly” (subset cached in the package). Data pipeline in data-raw/build_data.R.

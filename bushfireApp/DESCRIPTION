@@ -24,3 +24,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/bushfireApp
+BugReports: https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-yluu0123/issues
+

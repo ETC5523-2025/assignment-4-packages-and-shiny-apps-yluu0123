@@ -2,6 +2,12 @@
 title: "bushfireApp"
 output: github_document
 ---
+📦 **pkgdown website:**  
+[https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/bushfireApp](https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/bushfireApp)
+
+🚀 **Launch the Shiny app (local):**  
+Run in R: `bushfireApp::run_my_app()`
+
 
 # bushfireApp
 
@@ -12,7 +18,7 @@ bushfireApp is an R package that bundles:
 
 The goal is to let users see how global (and Australian) temperatures have shifted over time relative to a “pre-industrial” baseline.
 
-## Installation
+## 🧩 Installation
 
 You can install this package from GitHub using `remotes`:
 

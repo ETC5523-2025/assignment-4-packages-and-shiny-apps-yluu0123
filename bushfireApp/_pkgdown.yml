@@ -1,19 +1,57 @@
+# ──────────────────────────────────────────────
+#  bushfireApp: pkgdown configuration (fixed)
+# ──────────────────────────────────────────────
+
 template:
   bootstrap: 5
-
-destination: ../docs/bushfireApp
-
-url: https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/bushfireApp/
+  bootswatch: flatly
+  bslib:
+    base_font: {google: "Inter"}
+    heading_font: {google: "Inter"}
+    primary: "#0072B2"
 
 home:
   title: "bushfireApp"
   description: >
-    An interactive package to explore global temperature anomaly data
-    relative to the 1861–1890 baseline, via a Shiny app and documentation.
+    bushfireApp is an R package designed to explore **global temperature anomalies**
+    relative to the 1861–1890 baseline, including an interactive Shiny app and reproducible documentation.
+
+authors:
+  Yao Lu:
+    href: https://github.com/yluu0123
 
 navbar:
+  components:
+    app:
+      text: "Shiny app"
+      href: reference/run_my_app.html
   structure:
     left: [reference, articles]
-    right: [home]
+    right: [app, home]
 
+reference:
+  - title: "Main Dataset"
+    desc: Cleaned dataset used for exploring global temperature anomalies.
+    contents:
+      - temp_data
 
+  - title: "Functions"
+    desc: Functions exported by the package, including the Shiny launcher.
+    contents:
+      - run_my_app
+
+articles:
+  - title: "Vignettes"
+    desc: Explore usage examples and visualizations of global warming trends.
+    contents:
+      - exploring-temperature-anomalies
+
+footer:
+  structure:
+    left: [developed]
+    right: [pkgdown]
+  components:
+    developed:
+      text: "Developed by Yao Lu, built for Monash ETC5523 (Communicating with Data)."
+    pkgdown:
+      text: "Site built with pkgdown 2.1.3"
