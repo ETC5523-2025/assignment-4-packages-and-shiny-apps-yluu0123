@@ -1,5 +1,7 @@
 # bushfireApp
 
+[![pkgdown site](https://img.shields.io/badge/📘_View_pkgdown_site-blue)](https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/)
+
 **bushfireApp** is an R package designed to explore **global temperature anomalies** (°C) relative to the 1861–1890 baseline.
 
 It includes:
