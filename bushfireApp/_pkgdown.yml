@@ -2,6 +2,8 @@
 #  bushfireApp: pkgdown configuration (fixed)
 # ──────────────────────────────────────────────
 
+url: "https://ETC5523-2025.github.io/assignment-4-packages-and-shiny-apps-yluu0123/bushfireApp/"
+
 template:
   bootstrap: 5
   bootswatch: flatly
@@ -15,6 +17,11 @@ home:
   description: >
     bushfireApp is an R package designed to explore **global temperature anomalies**
     relative to the 1861–1890 baseline, including an interactive Shiny app and reproducible documentation.
+  links:
+    - text: "Browse source code"
+      href: "https://github.com/ETC5523-2025/assignment-4-packages-and-shiny-apps-yluu0123"
+    - text: "Launch the Shiny app (run_my_app)"
+      href: "reference/run_my_app.html"
 
 authors:
   Yao Lu:
@@ -26,8 +33,8 @@ navbar:
       text: "Shiny app"
       href: reference/run_my_app.html
   structure:
-    left: [reference, articles]
-    right: [app, home]
+    left: [home, reference, articles, app]
+    right: []
 
 reference:
   - title: "Main Dataset"
